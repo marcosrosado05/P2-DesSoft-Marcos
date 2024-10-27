@@ -59,4 +59,15 @@ def posiciona_frota(posicoes_navio):
                 y_coord = navios[x][y][1]
                 tabuleiro[x_coord][y_coord] = 1
     return tabuleiro
-                
+# AFUNDADOS
+def afundados(frota,tabuleiro):
+    qnt_afundados = 0 
+    for posicao_afundados in frota.values():
+        for x in posicao_afundados:
+            qnt_tiros = 0 
+            for y in x:
+                if tabuleiro[y[0]][y[1]] == "X":
+                    qnt_tiros += 1
+                if qnt_tiros == (len(x)):
+                    qnt_afundados += 1 
+    return qnt_afundados              
