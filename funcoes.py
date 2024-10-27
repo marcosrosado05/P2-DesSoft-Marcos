@@ -70,4 +70,26 @@ def afundados(frota,tabuleiro):
                     qnt_tiros += 1
                 if qnt_tiros == (len(x)):
                     qnt_afundados += 1 
-    return qnt_afundados              
+    return qnt_afundados          
+    
+def posicao_valida(inf_navio, linha, coluna,orientacao,tamanho):
+    atualizada = define_posicoes(linha,coluna,orientacao,tamanho)
+    
+
+
+
+    for navios, lista in inf_navio.items():
+        for posicoes in lista:
+            for posicoes_esc in atualizada:
+                if posicoes_esc == posicoes: 
+                    return False
+                else:
+                    return True
+    
+    for navios in atualizada: 
+        if navios[0] > 9 or navios[0] < 0:
+            return False
+        if navios[1] > 9 or navios[1] < 0: 
+            return False
+
+
