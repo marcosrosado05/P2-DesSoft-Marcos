@@ -1,3 +1,4 @@
+# POSIÇÕES
 def define_posicoes(linha,coluna,orientacao,tamanho):
     lista_posicao = []
 
@@ -10,3 +11,24 @@ def define_posicoes(linha,coluna,orientacao,tamanho):
             lista_posicao.append([linha, coluna])
             coluna+=1
     return lista_posicao
+# FROTA COM POSIÇÕES
+
+def preenche_frota(frota, nome_do_navio, linha, coluna, orientacao, tamanho):
+    lista_posicao = define_posicoes(linha, coluna, orientacao, tamanho)
+    
+    if len (frota) != 0:
+        if nome_do_navio in frota:
+            valor_i = frota[nome_do_navio]
+            valor_i.append(lista_posicao)
+            frota[nome_do_navio] = valor_i
+        else: 
+            lista_final = []
+            lista_final.append(lista_posicao)
+            frota[nome_do_navio]= lista_final
+    else:
+        lista_final = []
+        lista_final.append(lista_posicao)
+        frota[nome_do_navio]= lista_final
+    return frota
+  
+                
