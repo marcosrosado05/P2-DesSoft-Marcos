@@ -37,5 +37,26 @@ def faz_jogada(tabuleiro,linha,coluna):
     elif tabuleiro[linha][coluna] == 1:
         tabuleiro[linha][coluna] = 'X'  
     return tabuleiro
-
+# POSICIONA FROTA
+def posiciona_frota(posicoes_navio):
+    tabuleiro = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+  
+    for navios in posicoes_navio.values():
+        for x in range(len(navios)):
+            for y in range(len(navios[x])):
+                x_coord = navios[x][y][0]
+                y_coord = navios[x][y][1]
+                tabuleiro[x_coord][y_coord] = 1
+    return tabuleiro
                 
