@@ -77,19 +77,20 @@ def posicao_valida(inf_navio, linha, coluna,orientacao,tamanho):
     
 
 
-
+    posicao_proibida = 0 
     for navios, lista in inf_navio.items():
         for posicoes in lista:
             for posicoes_esc in atualizada:
-                if posicoes_esc == posicoes: 
-                    return False
-                else:
-                    return True
+                if posicoes_esc in posicoes: 
+                    posicao_proibida += 1
+            
     
     for navios in atualizada: 
         if navios[0] > 9 or navios[0] < 0:
-            return False
+            posicao_proibida += 1
         if navios[1] > 9 or navios[1] < 0: 
-            return False
-
-
+            posicao_proibida += 1
+    if posicao_proibida == 0:
+        return True
+    else:
+        return False
