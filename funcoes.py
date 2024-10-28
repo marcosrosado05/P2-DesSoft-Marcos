@@ -88,19 +88,6 @@ def posicao_valida(nome_do_navio, linha, coluna,orientacao,tamanho):
             for comparacao in atualizada:
                 if comparacao == coordenada: 
                     posicao_proibida += 1 
-
-    # for lista in nome_do_navio.values():
-    #     for posicao_esc in atualizada:
-    #         if posicao_esc == lista:
-    #             posicao_proibida += 1
-        
-            
-    
-    # for navios in atualizada: 
-    #     if navios[0] > 9 or navios[0] < 0:
-    #         posicao_proibida += 1
-    #     if navios[1] > 9 or navios[1] < 0: 
-    #         posicao_proibida += 1
             
     if posicao_proibida == 0:
         return True
